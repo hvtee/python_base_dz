@@ -1,7 +1,7 @@
-quater = int(input("Input quater: "))
+quater = int(input("Input quarter: "))
 
 if quater > 4 or quater < 1:
-    print("Wrong quater.")
+    print("Wrong quarter.")
     quit()
 
 if quater == 1:

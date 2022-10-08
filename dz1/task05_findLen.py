@@ -1,8 +1,5 @@
 import math
 
-coord1 = []
-coord2 = []
-
 coord1 = list(map(int, input("Input coord1 (x, y): ").split()))
 coord2 = list(map(int, input("Input coord2 (x, y): ").split()))
 

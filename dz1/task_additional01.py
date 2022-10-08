@@ -12,17 +12,17 @@ for time in time_list:
         seconds = time
         print(f"{seconds}s")
     elif time < 3600:
-        minutes = int(time / 60)
+        minutes = time // 60
         seconds = time % 60
         print(f"{minutes}m {seconds}s")
     elif time < 86400:
-        hours = int(time / 3600)
-        minutes = int(time % 3600 / 60)
+        hours = time // 3600
+        minutes = time % 3600 // 60
         seconds = time % 3600 % 60
         print(f"{hours}h {minutes}m {seconds}s")
     else:
-        days = int(time / 86400)
-        hours = int(time % 86400 / 3600)
-        minutes = int(time % 86400 % 3600 / 60)
+        days = time // 86400
+        hours = time % 86400 // 3600
+        minutes = time % 86400 % 3600 // 60
         seconds = time % 86400 % 3600 % 60
         print(f"{days}d {hours}h {minutes}m {seconds}s")

@@ -1,4 +1,3 @@
-
 # 2. Создать список, состоящий из кубов нечётных чисел от 1 до 1000 (куб X - третья степень числа X):
 # Вычислить сумму тех чисел из этого списка, сумма цифр которых делится нацело на 7. Например, число «19 ^ 3 = 6859»
 # будем включать в сумму, так как 6 + 8 + 5 + 9 = 28 – делится нацело на 7. Внимание: использовать только арифметические операции!
@@ -42,11 +41,6 @@ def find_sum(numbers_list):
     return summa
 
 
-def increase_list_number_by17(numbers_list):
-    numbers_list = [each_number + 17 for each_number in numbers_list]
-    return numbers_list
-
-
 required_numbers = []
 for i in range(1000 + 1):
     if i % 2 != 0:
@@ -55,6 +49,7 @@ for i in range(1000 + 1):
 print(required_numbers, sep=' ')
 print(f"Sum is: {find_sum(required_numbers)}")
 
-required_numbers = increase_list_number_by17(required_numbers)
+required_numbers = list(map(lambda num: num + 17, required_numbers))
+
 print(required_numbers, sep=' ')
 print(f"Sum is: {find_sum(required_numbers)}")

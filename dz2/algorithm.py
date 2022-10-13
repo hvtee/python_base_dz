@@ -1,7 +1,7 @@
 from random import randint
 
-list1 = [randint(10) for i in range(10)]
-list2 = [randint(10) for i in range(10)]
+list1 = [randint(-10, 10) for i in range(10)]
+list2 = [randint(-10, 10) for i in range(10)]
 
 list_cross=[]
 

@@ -5,8 +5,7 @@ def create_list(num):
     list_res = []
     if num == 0:
         return list_res
-    list_step = [randint(-number + 1, number - 1) for i in range(number - 2)]
-    list_res = [-number, *list_step, number]
+    list_res = [randint(-number, number) for i in range(number)]
     return list_res
 
 
@@ -17,11 +16,13 @@ def fill_file(num):
 
 
 def read_file():
-    data = []
-    with open("file.txt") as file:
-        for line in file:
-            data.append([int(x) for x in line.split()])
-    return data
+    # data = []
+    # with open("file.txt", 'r', encoding='utf-8') as file:
+    #     for line in file:
+    #         data.append([int(x) for x in line.split()])
+    with open("file.txt", 'r', encoding='utf-8') as file:
+        file = file.read().splitlines()
+    return file
 
 
 def multiple(list_nums, list_pos):
@@ -29,7 +30,7 @@ def multiple(list_nums, list_pos):
         return 0
     res = 1
     for i in range(len(list_pos)):
-        res *= list_nums[int(list_pos[i][0])]
+        res *= list_nums[int(list_pos[i])]
     return res
 
 
@@ -40,6 +41,7 @@ print(list1, sep=' ')
 
 fill_file(number)
 list_from = read_file()
+list_from = list(map(int, list_from))
 print(list_from)
 
 print(multiple(list1, list_from))
